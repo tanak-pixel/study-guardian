@@ -1,0 +1,5 @@
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+pygame>=2.5.0
+# torch is pulled in automatically by ultralytics
+# For GPU acceleration install the CUDA version of torch from https://pytorch.org
