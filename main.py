@@ -7,13 +7,32 @@ Your webcam is watching. Pick up your phone and get roasted.
 Stack: Python · OpenCV · Ultralytics YOLO · Pygame · Tkinter
 """
 
-import cv2
+try:
+    import cv2  # type: ignore[import-not-found]
+except ImportError as exc:
+    raise SystemExit(
+        "Missing dependency: OpenCV (cv2). Install it with: pip install opencv-python"
+    ) from exc
+
 import time
 import threading
 import argparse
 from pathlib import Path
-from ultralytics import YOLO
-import pygame
+
+try:
+    from ultralytics import YOLO  # type: ignore[import-not-found]
+except ImportError as exc:
+    raise SystemExit(
+        "Missing dependency: Ultralytics. Install it with: pip install ultralytics"
+    ) from exc
+
+try:
+    import pygame  # type: ignore[import-not-found]
+except ImportError as exc:
+    raise SystemExit(
+        "Missing dependency: pygame. Install it with: pip install pygame"
+    ) from exc
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 
